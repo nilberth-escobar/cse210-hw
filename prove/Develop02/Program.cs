@@ -8,7 +8,7 @@ namespace JournalApp
         {
             Journal journal = new Journal();
 
-            while (true)
+            while (true)//creating the menu
             {
                 Console.WriteLine("Please choose an option:");
                 Console.WriteLine("1. Write a new entry");
@@ -17,14 +17,14 @@ namespace JournalApp
                 Console.WriteLine("4. Load the journal from a file");
                 Console.WriteLine("5. Exit");
 
-                string choice = Console.ReadLine();
+                string choice = Console.ReadLine();//reading user's option
                 Console.WriteLine();
 
-                switch (choice)
+                switch (choice)//options
                 {
                     case "1":
                         Prompt prompt = PromptGenerator.GetRandomPrompt();
-                        Console.WriteLine(prompt.Question);
+                        Console.WriteLine(prompt._question);
                         string response = Console.ReadLine();
                         Entry entry = new Entry { Prompt = prompt, _response = response };
                         journal.AddEntry(entry);

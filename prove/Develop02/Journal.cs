@@ -24,36 +24,37 @@ namespace JournalApp
             entries.Add(entry);
         }
 
-        public void DisplayEntries()
+        public void DisplayEntries()//displaying the entries
         {
-            foreach (Entry entry in entries)
+            foreach (Entry entry in entries)//iterating the file to show the entries
             {
-                Console.WriteLine($"{entry.Prompt.Question} ({entry.Prompt.Date.ToShortDateString()}): {entry._response}");
+                Console.WriteLine($"{entry.Prompt._question} ({entry.Prompt.Date.ToShortDateString()}): {entry._response}");
             }
         }
 
-        public void SaveToFile(string filename)
+        public void SaveToFile(string filename)//saving the entries into a file
         {
             using (StreamWriter writer = new StreamWriter(filename))
             {
                 foreach (Entry entry in entries)
                 {
-                    writer.WriteLine($"{entry.Prompt.Question},{entry.Prompt.Date.ToShortDateString()},{entry._response}");
+                    writer.WriteLine($"{entry.Prompt._question},{entry.Prompt.Date.ToShortDateString()},{entry._response}");
+                    
                 }
             }
         }
 
-        public void LoadFromFile(string filename)
+        public void LoadFromFile(string _filename)
         {
             entries.Clear();
 
-            using (StreamReader reader = new StreamReader(filename))
+            using (StreamReader reader = new StreamReader(_filename))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] parts = line.Split(',');
-                    Prompt prompt = new Prompt { Question = parts[0], Date = DateTime.Parse(parts[1]) };
+                    Prompt prompt = new Prompt { _question = parts[0], Date = DateTime.Parse(parts[1]) };
                     Entry entry = new Entry { Prompt = prompt, _response = parts[2] };
                     entries.Add(entry);
                 }

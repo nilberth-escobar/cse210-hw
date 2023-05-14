@@ -4,7 +4,7 @@ namespace JournalApp
 {
     class Prompt
     {
-        public string Question { get; set; }
+        public string _question { get; set; }
         public DateTime Date { get; set; }
     }
 }
