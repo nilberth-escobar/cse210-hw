@@ -33,11 +33,11 @@ public class ListingActivity : Activity
 
         List<string> items = new List<string>();
 
-            for (int i = 0; i < _duration; i++)
-            {
-                string item = Console.ReadLine();
-                items.Add(item);
-            }
+        for (int i = 0; i < _duration; i++)
+        {
+            string item = Console.ReadLine();
+            items.Add(item);
+        }
 
         Thread.Sleep(_duration * 1000); // Pause for the specified duration in seconds
 
