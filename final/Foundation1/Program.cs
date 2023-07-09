@@ -17,7 +17,7 @@ class Program
     {
         List<Video> videos = new List<Video>();
 
-        // Create videos
+        // Create videos. Title, Author and length
         Video video1 = new Video("Title 1", "Author 1", 120);
         video1.AddComment("John", "Great video!");
         video1.AddComment("Amy", "I learned a lot from this.");
@@ -37,15 +37,15 @@ class Program
         // Display video information
         foreach (var video in videos)
         {
-            Console.WriteLine("Title: " + video.Title);
-            Console.WriteLine("Author: " + video.Author);
-            Console.WriteLine("Length: " + video.Length + " seconds");
+            Console.WriteLine("Title: " + video._title);
+            Console.WriteLine("Author: " + video._author);
+            Console.WriteLine("Length: " + video._length + " seconds");
             Console.WriteLine("Number of comments: " + video.GetNumberOfComments());
 
             Console.WriteLine("Comments:");
             foreach (var comment in video.Comments)
             {
-                Console.WriteLine("  Comment by " + comment.Name + ": " + comment.Text);
+                Console.WriteLine("  Comment by " + comment._name + ": " + comment._text);
             }
 
             Console.WriteLine();
@@ -53,40 +53,6 @@ class Program
     }
 }
 
-class Video
-{
-    public string Title { get; set; }
-    public string Author { get; set; }
-    public int Length { get; set; }
-    public List<Comment> Comments { get; }
 
-    public Video(string title, string author, int length)
-    {
-        Title = title;
-        Author = author;
-        Length = length;
-        Comments = new List<Comment>();
-    }
 
-    public void AddComment(string name, string text)
-    {
-        Comments.Add(new Comment(name, text));
-    }
 
-    public int GetNumberOfComments()
-    {
-        return Comments.Count;
-    }
-}
-
-class Comment
-{
-    public string Name { get; set; }
-    public string Text { get; set; }
-
-    public Comment(string name, string text)
-    {
-        Name = name;
-        Text = text;
-    }
-}
