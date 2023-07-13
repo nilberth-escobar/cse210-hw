@@ -2,25 +2,25 @@
 
 class Running : Activity
 {
-    public double Distance { get; set; }
+    public double _distance { get; set; }
 
     public override double GetDistance()
     {
-        return Distance;
+        return _distance;
     }
 
     public override double GetSpeed()
     {
-        return Distance / LengthInMinutes * 60;
+        return _distance / LengthInMinutes * 60;
     }
 
     public override double GetPace()
     {
-        return LengthInMinutes / Distance;
+        return LengthInMinutes / _distance;
     }
 
     public override string GetSummary()
     {
-        return $"{Date.ToString("dd MMM yyyy")} Running ({LengthInMinutes} min) - Distance: {Distance:F1} miles, Speed: {GetSpeed():F1} mph, Pace: {GetPace():F1} min per mile";
+        return $"{Date.ToString("dd MMM yyyy")} Running ({LengthInMinutes} min) - Distance: {_distance:F1} miles, Speed: {GetSpeed():F1} mph, Pace: {GetPace():F1} min per mile";
     }
 }

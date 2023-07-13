@@ -3,11 +3,11 @@
 
 class Swimming : Activity
 {
-    public int Laps { get; set; }
+    public int _laps { get; set; }
 
     public override double GetDistance()
     {
-        return Laps * 50 / 1000 * 0.62;
+        return _laps * 50 / 1000 * 0.62;
     }
 
     public override double GetSpeed()

@@ -27,7 +27,7 @@ class Program
         {
             Date = new DateTime(2022, 11, 3),
             LengthInMinutes = 30,
-            Distance = 3.0
+            _distance = 3.0
         };
         activities.Add(runningActivity);
 
@@ -35,7 +35,7 @@ class Program
         {
             Date = new DateTime(2022, 11, 3),
             LengthInMinutes = 30,
-            Speed = 6.0
+            _speed = 6.0
         };
         activities.Add(cyclingActivity);
 
@@ -43,7 +43,7 @@ class Program
         {
             Date = new DateTime(2022, 11, 3),
             LengthInMinutes = 30,
-            Laps = 80
+            _laps = 80
         };
         activities.Add(swimmingActivity);
 
