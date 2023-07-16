@@ -1,9 +1,6 @@
-
-
-
 class Swimming : Activity
 {
-    public int _laps { get; set; }
+    public int _laps { get; set; } // Number of laps swum during the activity
 
     public override double GetDistance()
     {
@@ -22,6 +19,6 @@ class Swimming : Activity
 
     public override string GetSummary()
     {
-        return $"{Date.ToString("dd MMM yyyy")} Swimming ({LengthInMinutes} min) - Distance: {GetDistance():F1} km, Speed: {GetSpeed():F1} kph, Pace: {GetPace():F1} min per km";
+        return $"{Date.ToString("dd MMM yyyy")} Swimming ({LengthInMinutes} min) - Laps: {_laps}, Distance: {GetDistance():F1} km, Speed: {GetSpeed():F1} kph, Pace: {GetPace():F1} min per km";
     }
 }

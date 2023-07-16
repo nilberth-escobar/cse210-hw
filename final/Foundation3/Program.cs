@@ -16,8 +16,9 @@ public class Program
     public static void Main(string[] args)
     {
         // Create products
-        Product product1 = new Product("Product 1", 1, 10.99, 2);
-        Product product2 = new Product("Product 2", 2, 5.99, 3);
+        Product product1 = new Product("T-Shirt", 1, 19.99, 2);
+        Product product2 = new Product("Jeans", 2, 39.99, 1);
+        Product product3 = new Product("Sneakers", 3, 59.99, 1);
 
         // Create customer
         Address address = new Address("123 Street", "City", "State", "USA");
@@ -32,7 +33,8 @@ public class Program
         Address address2 = new Address("456 Street", "City", "State", "Canada");
         Customer customer2 = new Customer("Jane Smith", address2);
         Order order2 = new Order(customer2);
-        order2.AddProduct(product1);
+        order2.AddProduct(product2);
+        order2.AddProduct(product3);
 
         // Display results
         Console.WriteLine(order1.GetPackingLabel());
@@ -46,3 +48,4 @@ public class Program
         Console.WriteLine("Total Price: $" + order2.CalculateTotalPrice());
     }
 }
+

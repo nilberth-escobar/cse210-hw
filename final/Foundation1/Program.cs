@@ -18,15 +18,15 @@ class Program
         List<Video> videos = new List<Video>();
 
         // Create videos. Title, Author and length
-        Video video1 = new Video("Title 1", "Author 1", 120);
+        Video video1 = new Video("Flutter from scratch", "FreeCodeCamp.org", 5);
         video1.AddComment("John", "Great video!");
         video1.AddComment("Amy", "I learned a lot from this.");
 
-        Video video2 = new Video("Title 2", "Author 2", 180);
+        Video video2 = new Video("JavaScript for beginners", "Fernando Solano", 8);
         video2.AddComment("Mike", "Nice explanation!");
         video2.AddComment("Sarah", "This video helped me understand the topic better.");
 
-        Video video3 = new Video("Title 3", "Author 3", 90);
+        Video video3 = new Video("People are Awesome vs fail", "People are Awesome", 1);
         video3.AddComment("David", "Very informative.");
         video3.AddComment("Lisa", "I enjoyed watching this.");
 
@@ -39,7 +39,7 @@ class Program
         {
             Console.WriteLine("Title: " + video._title);
             Console.WriteLine("Author: " + video._author);
-            Console.WriteLine("Length: " + video._length + " seconds");
+            Console.WriteLine("Length: " + video._length + " hours");
             Console.WriteLine("Number of comments: " + video.GetNumberOfComments());
 
             Console.WriteLine("Comments:");

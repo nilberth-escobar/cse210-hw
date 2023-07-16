@@ -30,7 +30,7 @@ class Program
         {
             Date = new DateTime(2022, 11, 3),
             LengthInMinutes = 30,
-            _speed = 6.0
+            _speed = 6.0,
         };
         activities.Add(cyclingActivity);
 

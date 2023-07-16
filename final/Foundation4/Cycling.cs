@@ -1,6 +1,5 @@
 
 
-
 class Cycling : Activity
 {
     public double _speed { get; set; }

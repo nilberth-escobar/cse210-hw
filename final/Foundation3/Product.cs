@@ -32,7 +32,7 @@ public class Product
 
     public double Price
     {
-        get { return _price; }
+        get { return _price;}
     }
 
     public int Quantity

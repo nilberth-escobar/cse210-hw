@@ -35,7 +35,7 @@ public class Order
             total += 35;
         }
 
-        return total;
+        return Math.Round(total, 2);
     }
 
     public string GetPackingLabel()
@@ -43,7 +43,7 @@ public class Order
         string packingLabel = "Packing Label:\n";
         foreach (Product product in _products)
         {
-            packingLabel += $"Name: {product.Name}, Product ID: {product.ProductId}\n";
+            packingLabel += $"Product Name: {product.Name}, Product ID: {product.ProductId}\n";
         }
         return packingLabel;
     }
